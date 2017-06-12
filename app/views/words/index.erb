@@ -1,0 +1,13 @@
+<table>
+	<tr>
+		<th>English</th>
+		<th>Pig Latin</th>
+	</tr>
+	<% @words.each do |word| %>
+	<tr>
+		<td><%=word.english%></td>
+		<td><%=word.pigLatin%></td>
+	</tr>
+	<% end %>
+</table>
+
