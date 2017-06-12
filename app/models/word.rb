@@ -16,8 +16,8 @@ class Word < ActiveRecord::Base
 	end
   end
 
-def tutnese_dialect_one
-	def sub_letters(letter)
+
+def sub_letters(letter)
   translate_letter = letter.gsub!(/[bcdfghjklmnpqrstvwxyz]/,
   'b' => 'bub',
   'c' => 'cash',
@@ -63,4 +63,5 @@ def tutnese_dialect_one(word)
   end
   return translate_array.join("")
 end
+
 end
