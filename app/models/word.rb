@@ -1,7 +1,7 @@
 class Word < ActiveRecord::Base
   validates :english, presence: true
 
-  def pigLatin
+  def pig_latin
   	word = self.english
 	if word[0] =~ /^[aeiou]/
 	    return word
@@ -15,4 +15,6 @@ class Word < ActiveRecord::Base
 		return word
 	end
   end
+
+
 end
