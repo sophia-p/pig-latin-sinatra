@@ -1,15 +1,25 @@
 
 
-<h2 class="transparent inline-block">Translate a word</h2>
+<h2>Translate a word</h2>
+
+<% if @errors%>
+  <section>
+    <%= erb :_errors%>
+  </section>
+<% end %>
+
 <div>
-  <form method="post" action="/words/new">
+  <form id="new-word-form" method="post" action="/words/new">
     <div class="block">
     <label for="title-input">Word: </label>
     <input type="text" name="word[english]">
     </div>
 
     <div class="block">
-      <input class="pretty_button" type="submit" value="Post Word">
+      <input type="submit" value="Post Word">
     </div>
   </form>
 </div>
+
+
+

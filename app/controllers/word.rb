@@ -17,9 +17,18 @@ end
 post '/words/new' do
 	@word = Word.new(params[:word])
 	if @word.save
-		redirect "/words"
+		if request.xhr?
+			erb :'words/_list', layout: false, locals:{word:@word}
+		else
+			redirect "/words"
+		end
 	else
-		@errors = @words.errors.full_messages
-		erb :'words/new'
+		@errors = @word.errors.full_messages
+		if request.xhr?
+			status 422
+			@errors
+		else
+			erb :'words/new'
+		end
 	end
 end

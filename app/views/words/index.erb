@@ -1,15 +1,26 @@
-<table>
+<div id="word-list">
+<table class="table word-table">
 	<tr>
-		<th>English</th>
+		<th scope="row">English</th>
 		<th>Pig Latin</th>
 	</tr>
 	<% @words.each do |word| %>
-	<tr>
-		<td><%=word.english%></td>
-		<td><%=word.pigLatin%></td>
-	</tr>
+		<%= erb :'words/_list', locals: {word:word} %>
 	<% end %>
 </table>
+</div>
 
-<img src="images/pig.jpeg"/>
+<div>
+  <form id="new-word-form" method="post" action="/words/new">
+    <div class="block">
+    <label for="title-input">Word: </label>
+    <input type="text" name="word[english]">
+    </div>
+
+    <div class="block">
+      <input type="submit" value="Post Word">
+    </div>
+  </form>
+</div>
+<img src="images/pig.jpeg" class="responsive" alt="pig" />
 
