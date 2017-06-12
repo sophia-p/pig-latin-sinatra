@@ -1,3 +1,3 @@
 get '/' do
-	redirect "/words/"
+	redirect "/words"
 end
